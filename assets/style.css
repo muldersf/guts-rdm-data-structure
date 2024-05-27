@@ -1,0 +1,361 @@
+:root {
+    --color-cohort-a: #86af7e; /* Green */
+    --color-cohort-b: #b18fbb; /* Purple */
+    --color-cohort-c: #7193ab; /* Blue */
+    --color-cohort-d: #d4a588; /* Orange */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root, :host {
+    --fa-font-regular: normal 400 1rem/1 "Font Awesome 6 Free";
+    --fa-font-solid: normal 900 1rem/1 "Font Awesome 6 Free";
+    --fa-font-brands: normal 400 1rem/1 "Font Awesome 6 Brands";
+}
+
+.container {
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #525354;
+    max-width: 80rem; 
+    min-height: 53rem; 
+    position: absolute; 
+}
+
+.head {
+    display: flex;
+    padding-top: 0.5rem;
+    width: 93%;
+    padding-bottom: 0.5rem;
+}
+.tabs {
+    display: flex;
+    gap: 0.3rem;
+    border-radius: 15px;
+    margin-top: 0.7rem;
+    position: relative;
+    margin-left: 4rem;
+}
+
+.tab-link {
+    height: 2.2rem;
+    background-color: #525354;
+    border-color: #848484;
+    border-radius: 5px;
+    border-width: 0.05rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: #a1a1a1;
+}
+
+.tab-link.active {
+    background-color: #dddddd;
+}
+
+.tab-link:hover{
+    transition: transform 0.3s ease; 
+    background-color:  #dddddd;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+  display: block;
+}
+
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border-style: solid;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.yoda-header {
+    background-color: black;
+    color: white;
+    display: flex;
+    width: 78rem;
+    height: 40px;
+    gap: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+}
+
+.location-header {
+    background-color: rgb(94, 94, 94);
+    color: rgb(219, 219, 219);
+    width: 90%;
+    margin-left: 1.5rem;
+    padding-left: 0.5rem;
+    padding-bottom: 15px;
+    padding-top: 1px;
+    height: 30px;
+    display: flex;
+    gap: 2.5rem;
+    font-size: 14px;
+    flex-wrap: wrap; 
+}
+
+.location-header .small {
+   margin-right: 15rem;
+}
+
+.location-buttons {
+    display: flex;
+    gap: 0.4rem;
+    margin-left: 21rem;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+.button {
+    background-color: #889396;
+    height: 20px;
+    padding: 5px;
+    margin-top: 7px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+
+}
+
+.header-divider {
+    position: relative;
+    background-color: black;
+    height: 35px;
+    padding-left: 20px;
+    display: flex;
+    color: white;
+    width: 89.6%;
+    padding-bottom: 10px;
+}
+
+.header-divider .square-icon {
+    margin-left: -5px;
+}
+
+.header-divider .header-divider-text {
+    margin-left: 20px;
+    font-size: 15px;
+    margin-top: 12px;
+}
+
+.header-title {
+    height: 30px;
+    margin-left: 2rem;
+    width: 33rem;
+    font-size: 20px;
+    color: rgb(219, 219, 219);
+    position: relative;
+}
+
+
+.mainbody {
+    margin-left: 20px;
+}
+
+.subcontainer {
+    width: 80rem;
+    height: 90%;
+    flex-direction: row;
+    font-size: 14px;
+    position: relative;
+}
+
+
+.explanation-box {
+    padding-left: 20px;
+    padding-right: 15px;
+    position: absolute;
+    width: 30rem;
+    background-color: #9fa3a6;
+    box-shadow: #3a3a3a;
+    border-radius: 15px;
+    font-size: 14px;
+    position: absolute; 
+    top: 1rem;
+    right: 5%; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.break {
+    padding-top: 170px;
+}
+
+.level2 .arrow{
+    margin-left: 12px;
+}
+
+.level3 .arrow{
+    margin-left: 45px;
+}
+
+.level4 .arrow{
+    margin-left: 75px;
+}
+
+#file2,
+#file4 {
+    margin-left: 95px;
+}
+
+#example-b #file3
+#example-g #file3 {
+    margin-left: 95px;
+}
+
+#level1-1 .folder-box,
+#level3-1 .folder-box {
+    background-color: #3a3a3a;
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+}
+#level2-1 .folder-box {
+    background-color: rgb(31, 31, 31); 
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+}
+
+#level1-2 .folder-box,
+#level3-2 .folder-box {
+    background-color:rgb(31, 31, 31);
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+}
+#level2-2 .folder-box,
+#level1-3 .folder-box {
+    background-color: #3a3a3a ; 
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+}
+
+#example-c .file-icon,
+#example-d .file-icon,
+#example-e .file-icon,
+#example-f .file-icon{
+    margin-left: 95px;
+}
+#example-c #file1,
+#example-c #file3,
+#example-d #file1,
+#example-d #file3,
+#example-e #file1,
+#example-e #file3,
+#example-f #file1,
+#example-f #file3 {
+    margin-left: 0px;
+}
+
+#example-b .file-icon {
+    margin-left: 95px;
+}
+
+#example-b #file1 {
+    margin-left: 0px;
+}
+
+#example-g #file3 {
+    margin-left: 95px;
+}
+.file {
+    color: white;
+}
+
+.file-box {
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+}
+
+#home #file-box-4 {
+    background-color: rgb(31, 31, 31);
+}
+
+#home #file-box-3 {
+    background-color: #3a3a3a;
+}
+
+#file-box-1,
+#file-box-3,
+#home #file-box-4
+#example-c #file-box-3 {
+    background-color: rgb(31, 31, 31);
+}
+
+#example-c #file-box-3,
+#example-c #file-box-5,
+#example-c #file-box-7,
+#example-c #file-box-9,
+#example-d #file-box-3,
+#example-d #file-box-5,
+#example-d #file-box-7,
+#example-d #file-box-9,
+#example-e #file-box-3,
+#example-e #file-box-5,
+#example-e #file-box-7,
+#example-e #file-box-9,
+#example-f #file-box-3,
+#example-f #file-box-5,
+#example-f #file-box-7,
+#example-f #file-box-9{
+    background-color: #3a3a3a;
+}
+
+#example-c #file-box-4,
+#example-c #file-box-6,
+#example-c #file-box-8,
+#example-c #file-box-10, 
+#example-d #file-box-4,
+#example-d #file-box-6,
+#example-d #file-box-8,
+#example-d #file-box-10,
+#example-e #file-box-4,
+#example-e #file-box-6,
+#example-e #file-box-8,
+#example-e #file-box-10,
+#example-f #file-box-4,
+#example-f #file-box-6,
+#example-f #file-box-8,
+#example-f #file-box-10{
+    background-color: rgb(31, 31, 31);
+}
+#file-box-2,
+#file-box-4,
+#home #file-box-3
+#example-c  #file-box-4{
+    background-color: #3a3a3a;
+}
+
+.folder-box {
+    padding-top: 5px;
+    display: flex;
+    gap: 10px;
+    background-color: #3a3a3a;
+}
+
+.file-box {
+    display: flex;
+    gap: 10px;
+}
+
+.file {
+    font-size: 14px;
+}
+.file-icon {
+    margin-top: 12px;
+}
+
+.square-icon {
+    margin-top: 12px;
+}
+.folder-box p {
+    margin-top: 7px;
+}
+
