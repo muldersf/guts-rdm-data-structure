@@ -214,7 +214,8 @@ button, input[type="submit"], input[type="reset"] {
     width: 90%;
     padding-left: 15px;
 }
-#level2-1 .folder-box {
+#level2-1 .folder-box,
+#level2-3 .folder-box {
     background-color: rgb(31, 31, 31); 
     color: white;
     width: 90%;
@@ -228,9 +229,24 @@ button, input[type="submit"], input[type="reset"] {
     width: 90%;
     padding-left: 15px;
 }
+
+#level1-4 .folder-box{
+    background-color:rgb(31, 31, 31);
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+}
+
 #level2-2 .folder-box,
 #level1-3 .folder-box {
     background-color: #3a3a3a ; 
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+}
+
+#level4-2 .folder-box {
+    background-color:rgb(31, 31, 31);
     color: white;
     width: 90%;
     padding-left: 15px;
@@ -359,3 +375,114 @@ button, input[type="submit"], input[type="reset"] {
     margin-top: 7px;
 }
 
+#example-a #level1-5 .file-box,
+#example-a #level1-7 .file-box {
+    background-color: #3a3a3a;
+}
+
+#example-a #level1-6 .file-box,
+#example-a #level1-8 .file-box {
+    background-color: rgb(31, 31, 31);
+}
+
+#example-h #level5-1 #file-box-1,
+#example-h #level5-2 #folder-box-1,
+#example-h #level5-2 #folder-box-3 {
+    background-color: #3a3a3a ; 
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+}
+
+#example-h #level5-1 #file-box-2,
+#example-h #level5-2 #folder-box-2{
+    background-color: rgb(31, 31, 31);
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+}
+
+#example-h #level5-1 .arrow,
+#example-h #level5-2 .arrow {
+    padding-left: 105px;
+}
+
+#example-h #level5-1 #file2 {
+    padding-left: 30px;
+}
+
+#example-h #level3-2 .folder-box,
+#example-h #level1-2 .folder-box {
+    background-color: #3a3a3a ; 
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+
+}
+
+#example-h #level3-3 .folder-box,
+#example-h #level1-3 .folder-box {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+
+}
+
+ #example-h #level4-3 #file-box-3 {
+    background-color: #3a3a3a ; 
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+ }
+
+ #example-h #level4-3 #file-box-4 {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+ }
+
+
+#example-h #level4-3 .folder-box {
+    background-color: #3a3a3a ; 
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+}
+
+#example-h #level5-3 #file-box-3 {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+}
+
+#example-h #level5-3 #file-box43 {
+    background-color: #3a3a3a ; 
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+}
+
+#example-h #level1-2 .folder-box {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+}
+
+#example-h #level1-3 .folder-box {
+    background-color: #3a3a3a ; 
+    color: white;
+    width: 90%;
+    padding-left: 15px;
+}
+
+#example-h #level5-3 .arrow{
+    padding-left: 105px;
+}
+
+#example-h #level5-3 #file2 {
+    padding-left: 30px;
+}

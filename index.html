@@ -38,6 +38,7 @@
                 <button id="example-e-tab"class="tab-link" onclick="openTab(event, 'example-e')">Dynamometer</button>
                 <button id="example-f-tab"class="tab-link" onclick="openTab(event, 'example-f')">ECG</button>
                 <button id="example-g-tab"class="tab-link" onclick="openTab(event, 'example-g')">Saliva, Hair</button>
+                <button id="example-h-tab"class="tab-link" onclick="openTab(event, 'example-h')">Derivatives</button>
             </div>    
         </div>
         
@@ -160,7 +161,7 @@
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <i class="fa-regular fa-folder fa-2x"></i>
-                            <p class = "folder">phenotype</p>
+                            <p class = "folder">derivatives</p>
                         </div>
                     </div>
                     <div class = "level1" id = "level1-2">
@@ -168,7 +169,7 @@
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <i class="fa-regular fa-folder fa-2x"></i>
-                            <p class = "folder">sub-guts-eur-001</p>
+                            <p class = "folder">phenotype</p>
                         </div>
                     </div>
                     <div class = "level1" id = "level1-3">
@@ -176,47 +177,55 @@
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <i class="fa-regular fa-folder fa-2x"></i>
-                            <p class = "folder">sub-guts-eur-002</p>
+                            <p class = "folder">sub-guts-eur-001</p>
                         </div>
                     </div>
                     <div class = "level1" id = "level1-4">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">sub-guts-eur-002</p>
+                        </div>
+                    </div>
+                    <div class = "level1" id = "level1-5">
                         <div class = "file-box" id = "file-box-1">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = file-icon id = "file3"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >guts-eur_task-demographics.tsv</p>
+                            <p class = "file" >guts-eur_demographics.tsv</p>
                         </div>
                     </div>
-                    <div class = "level1" id = "level1-5">
+                    <div class = "level1" id = "level1-6">
                         <div class = "file-box" id = "file-box-2">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = file-icon id = "file3"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >guts-eur_task-demographics.json</p>
+                            <p class = "file" >guts-eur_demographics.json</p>
                         </div>
                     </div>
                         
-                    <div class = "level1" id = "level1-6">
+                    <div class = "level1" id = "level1-7">
                         <div class = "file-box" id = "file-box-3">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = file-icon id = "file3"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >guts-eur_task-participation.tsv</p>
+                            <p class = "file" >guts-eur_participation.tsv</p>
                         </div>
                     </div>
-                    <div class = "level1" id = "level1-7">
+                    <div class = "level1" id = "level1-8">
                         <div class = "file-box" id = "file-box-4">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = file-icon id = "file3"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >guts-eur_task-participation.json</p>
+                            <p class = "file" >guts-eur_participation.json</p>
                         </div>
                     </div>
                     <div class = "explanation-box">
                         <br>
                         <i class="fa-solid fa-circle-info"></i>
                         <p>This is what the 'first-level' of a data structure could look like. A phenotype folder and individual subject folders. Additionally, there is room for files with participant information. <br><br>
-                            Generally speaking, information about participants themselves (demographics) is placed in the task-demographics file, whereas information about participation (e.g., dates of sessions, sessions completed, etc.) is placed in a task-participation file.</p>
+                            Generally speaking, information about participants themselves (demographics) is placed in the demographics file, whereas information about participation (e.g., dates of sessions, sessions completed, etc.) is placed in a participation file. <br><br> Additionally, there is room for a derivatives folder, in which outputs from processing pipelines can be saved.</p>
                     </div> 
                 </div>    
             </div>
@@ -803,7 +812,7 @@
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
                             <i class="fa-regular fa-folder fa-2x"></i>
-                            <p class = "folder">quest</p>
+                            <p class = "folder">physio</p>
                         </div>
                     </div>
                     <div class = "level4" id = "level4-1">
@@ -848,7 +857,197 @@
                     </div>
                 </div>
                 
-            </div>   
+            </div>
+            <div id="example-h" class="tab tab-content">
+                <div class="subcontainer">
+                    <div class = "header-divider">
+                        <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                        <p class = "header-divider-text">Name</p>
+                    </div>
+                    <div class = "level1" id = "level1-1">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">derivatives</p>
+                        </div>
+                    </div>
+                    <div class = "level2" id = "level2-1">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">phenotype</p>
+                        </div>
+                    </div>
+                    <div class = "level3" id = "level3-1">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">ses-01</p>
+                        </div>
+                    </div>
+                    <div class = "level4" id = "level4-2">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">quest</p>
+                        </div>
+                    </div>
+                    <div class = "level5" id = "level5-1">
+                        <div class = "file-box" id = "file-box-1">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <p class = file-icon  id = "file1"><i class="fa-regular fa-file fa-xl"></i></p>
+                            <p class = "file">guts-eur_ses-01_task-iri_desc-totalscores.tsv</p>
+                        </div>
+                    </div>
+                    <div class = "level4" id = "level4-2">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">neurobio</p>
+                        </div>
+                    </div>
+                    <div class = "level5" id = "level5-1">
+                        <div class = "file-box" id = "file-box-1">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <p class = file-icon  id = "file1"><i class="fa-regular fa-file fa-xl"></i></p>
+                            <p class = "file">guts-eur_ses-01_task-smri_desc-freesurfer-corticalvol.tsv</p>
+                        </div>
+                        <div class = "file-box" id = "file-box-2">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = file-icon id = "file2"><i class="fa-regular fa-file fa-xl"></i></p>
+                            <p class = "file" >guts-eur_ses-01_task-smri_desc-freesurfer-corticalthickness.tsv</p>
+                        </div>
+                    </div>
+                    <div class = "level2" id = "level2-2">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">fmriprep</p>
+                        </div>
+                    </div>
+                    <div class = "level2" id = "level2-3">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">freesurfer</p>
+                        </div>
+                    </div>
+                    <div class = "level3" id = "level3-2">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">sub-guts-eur-001</p>
+                        </div>
+                    </div>
+                    <div class = "level4" id = "level4-2">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">ses-01</p>
+                        </div>
+                    </div>
+                    <div class = "level5" id = "level5-2">
+                        <div class = "folder-box" id ="folder-box-1">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">surf</p>
+                        </div>
+                        <div class = "folder-box" id ="folder-box-2">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">stats</p>
+                        </div>
+                        <div class = "folder-box" id ="folder-box-3">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">mri</p>
+                        </div>
+                    </div>
+                    <div class = "level3" id = "level3-3">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">group</p>
+                        </div>
+                    </div>
+                    <div class = "level4" id = "level4-3">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">ses-01</p>
+                        </div>
+                    </div>
+                    <div class = "level5" id = "level5-3">
+                        <div class = "file-box" id = "file-box-3">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <p class = file-icon  id = "file1"><i class="fa-regular fa-file fa-xl"></i></p>
+                            <p class = "file">guts-eur_ses-01_task-smri_desc-freesurfer-corticalvol.tsv</p>
+                        </div>
+                        <div class = "file-box" id = "file-box-4">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = file-icon id = "file2"><i class="fa-regular fa-file fa-xl"></i></p>
+                            <p class = "file" >guts-eur_ses-01_task-smri_desc-freesurfer-corticalthickness.tsv</p>
+                        </div>
+                    </div>
+                    
+                    <div class = "level1" id = "level1-2">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">phenotype</p>
+                        </div>
+                    </div>
+                    <div class = "level1" id = "level1-3">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">sub-guts-eur-001</p>
+                        </div>
+                    </div>
+                    <div class = "explanation-box">
+                        <br>
+                        <i class="fa-solid fa-circle-info"></i>
+                        <p>In the derivative folder, there is place for files that are the result of data going through some sort of processing pipeline. The derivative folder contains: <br><Br> <b>1. Pipeline folders </b><br> <b>2. A phenotype folder</b> <br><br>For example, calculated total/subscale scores of a questionnaire or freesurfer output or neurobiological group-level files manually created from freesurfer output can be placed in the derivative phenotype folder.  <br><br>You can also opt to place the latter in a <b>'group'</b> folder within the pipeline folder, so that all pipeline data output stays together. <br><br> <b>"Desc"</b>stands for <b>description</b> and describes what kind of data is derived from the primary file. In this case, it describes what kind of data was derived from the smri data (through freesurfer) and the questionnaire iri. <b>Note that information about the original file should be placed in the accompanying json file.</b><br><br> <b>Make sure task information is included in the derivative data structure.</b> Preferably in the file name: <br><br> 'sub-guts-eur-001_ses-01_<b>task-fmri-sddt</b>_desc-brain_mask.nii.gz'.<br> <br> In case, that is not possible, it should be in the pipeline name:<br> 'fmriprep_<b>task-fmri-sddt</b>''  </p>
+                    </div>
+                </div>   
+            </div>      
         </div>  
 
     </div>
