@@ -139,7 +139,7 @@
                             <b>Phenotype:</b> Group-level data files that are not specific to any particular neuroimaging modality, such as questionnaires or hormone level output. A single phenotype data file typically contains information about all participants’ performance or characteristics related to a specific task within the study. <br>
                             <ul>- beh (group-level behavioral data from tasks)</ul>
                             <ul>- quest (questionnaire data)</ul>
-                            <ul>- physio (physiological data, e.g., hormone level output)</ul>
+                            <ul>- biosample (data from biosamples, e.g., hormone level output)</ul>
                             <b>Subject folders:</b> Data files that are specific to a particular (neuro)imaging/recording modality. BIDS includes the following modalities:
                             <ul>- func (task-based and resting-state functional MRI)</ul>
                             <ul>- fmap (field inhomogeneity mapping data such as field maps)</ul>
@@ -812,7 +812,7 @@
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
                             <i class="fa-regular fa-folder fa-2x"></i>
-                            <p class = "folder">physio</p>
+                            <p class = "folder">biosample</p>
                         </div>
                     </div>
                     <div class = "level4" id = "level4-1">
@@ -853,7 +853,7 @@
                     <div class = "explanation-box">
                         <br>
                         <i class="fa-solid fa-circle-info"></i>
-                        <p>Hormone analysis output will consist of one file per measure that includes data of all participants and will therefore be placed in the ‘physio’ folder in phenotype as it's at the group level. Additionally, equal to all other TSV files, an accompanying JSON file will be placed in the same folder for each file.</p>
+                        <p>Hormone analysis output will consist of one file per measure that includes data of all participants and will therefore be placed in the ‘biosample’ folder in phenotype as it's at the group level. Additionally, equal to all other TSV files, an accompanying JSON file will be placed in the same folder for each file.</p>
                     </div>
                 </div>
                 
