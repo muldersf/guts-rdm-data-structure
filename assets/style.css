@@ -193,8 +193,38 @@ button, input[type="submit"], input[type="reset"] {
     margin-left: 45px;
 }
 
-.level4 .arrow{
+.level4 .arrow {
     margin-left: 75px;
+}
+
+#example-c .level5 .arrow,
+#example-d .level5 .arrow{
+    margin-left: 105px;
+}
+
+#example-c .level5 .file-icon,
+#example-d .level5 .file-icon{
+    margin-left: 125px;
+}
+
+#example-f #file-box-3 .file-icon {
+    margin-left: 95px;
+}
+
+#example-c .level5 #file-box-2 {
+    background-color: rgb(31, 31, 31); 
+}
+
+#example-c #level1-2 .folder-box,
+#example-c #level3-2 .folder-box,
+#example-d #level1-2 .folder-box,
+#example-d #level3-2 .folder-box {
+    background-color: #3a3a3a;
+}
+
+#example-c #level2-2 .folder-box,
+#example-d #level2-2 .folder-box {
+    background-color: rgb(31, 31, 31); 
 }
 
 #file2,
@@ -203,7 +233,8 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 #example-b #file3
-#example-g #file3 {
+#example-g #file3
+#example-f #file3 {
     margin-left: 95px;
 }
 
@@ -215,7 +246,8 @@ button, input[type="submit"], input[type="reset"] {
     padding-left: 15px;
 }
 #level2-1 .folder-box,
-#level2-3 .folder-box {
+#level2-3 .folder-box,
+#level4-1 .folder-box {
     background-color: rgb(31, 31, 31); 
     color: white;
     width: 90%;
@@ -298,21 +330,41 @@ button, input[type="submit"], input[type="reset"] {
     background-color: #3a3a3a;
 }
 
+#home #file-box-1,
+#home #file-box-4 {
+    background-color: #3a3a3a;
+}
+
+#home #file-box-2,
+#home #file-box-3 {
+    background-color: rgb(31, 31, 31);
+}
+
+#home #folder-box-6 {
+    background-color: rgb(31, 31, 31);
+}
+
+#home #folder-box-5,
+#home #folder-box-7 {
+    background-color: #3a3a3a;
+}
+
 #file-box-1,
 #file-box-3,
 #home #file-box-4
 #example-c #file-box-3 {
     background-color: rgb(31, 31, 31);
 }
-
-#example-c #file-box-3,
-#example-c #file-box-5,
-#example-c #file-box-7,
-#example-c #file-box-9,
-#example-d #file-box-3,
-#example-d #file-box-5,
-#example-d #file-box-7,
-#example-d #file-box-9,
+#example-c #file-box-1,
+#example-c #file-box-4,
+#example-c #file-box-6,
+#example-c #file-box-8,
+#example-c #file-box-10, 
+#example-d #file-box-1,
+#example-d #file-box-4,
+#example-d #file-box-6,
+#example-d #file-box-8,
+#example-d #file-box-10,
 #example-e #file-box-3,
 #example-e #file-box-5,
 #example-e #file-box-7,
@@ -324,14 +376,17 @@ button, input[type="submit"], input[type="reset"] {
     background-color: #3a3a3a;
 }
 
-#example-c #file-box-4,
-#example-c #file-box-6,
-#example-c #file-box-8,
-#example-c #file-box-10, 
-#example-d #file-box-4,
-#example-d #file-box-6,
-#example-d #file-box-8,
-#example-d #file-box-10,
+
+#example-c #file-box-3,
+#example-c #file-box-5,
+#example-c #file-box-7,
+#example-c #file-box-9,
+#example-d #file-box-2,
+#example-d #file-box-3,
+#example-d #file-box-5,
+#example-d #file-box-7,
+#example-d #file-box-9,
+
 #example-e #file-box-4,
 #example-e #file-box-6,
 #example-e #file-box-8,
@@ -485,4 +540,30 @@ button, input[type="submit"], input[type="reset"] {
 
 #example-h #level5-3 #file2 {
     padding-left: 30px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
+details > summary::after {
+    content: '+';
+    color: white;
+    background-color: rgb(115, 165, 118);
+    border-radius: 1em;
+    font-weight: bold;
+    padding: 0 5px;
+    margin-inline-start: 5px;
+}
+
+details[open] > summary::after{
+    content: '-';
+    background-color: gray;
+}
+
+details > summary {
+    list-style-type: none;
 }

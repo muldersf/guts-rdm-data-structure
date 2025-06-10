@@ -35,7 +35,7 @@
                 <button id="example-b-tab" class="tab-link" onclick="openTab(event, 'example-b')">Questionnaires</button>
                 <button id="example-c-tab" class="tab-link" onclick="openTab(event, 'example-c')">fMRI</button>
                 <button id="example-d-tab" class="tab-link" onclick="openTab(event, 'example-d')">EEG</button>
-                <button id="example-e-tab"class="tab-link" onclick="openTab(event, 'example-e')">Dynamometer</button>
+                <button id="example-e-tab"class="tab-link" onclick="openTab(event, 'example-e')">Behavioral</button>
                 <button id="example-f-tab"class="tab-link" onclick="openTab(event, 'example-f')">ECG</button>
                 <button id="example-g-tab"class="tab-link" onclick="openTab(event, 'example-g')">Saliva, Hair</button>
                 <button id="example-h-tab"class="tab-link" onclick="openTab(event, 'example-h')">Derivatives</button>
@@ -54,10 +54,18 @@
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">derivatives</p>
+                        </div>
+                    </div>
+                    <div class = "level1" id = "level1-2">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <i class="fa-regular fa-folder fa-2x"></i>
                             <p class = "folder">phenotype</p>
                         </div>
                     </div>
-                    <div class = "level2" id = "level2-1">
+                    <div class = "level2" id = "level2-2">
                         <div class = "folder-box">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
@@ -66,7 +74,7 @@
                             <p class = "folder">session</p>
                         </div>
                     </div>
-                    <div class = "level3" id = "level3-1">
+                    <div class = "level3" id = "level3-2">
                         <div class = "folder-box">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
@@ -75,7 +83,7 @@
                             <p class = "folder">datatype</p>
                         </div>
                     </div>
-                    <div class = "level4" id = "level4-1">
+                    <div class = "level4" id = "level4-2">
                         <div class = "file-box" id = "file-box-1">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
@@ -91,7 +99,7 @@
                         </div>
                     </div>
                     <div class = "level1" id = "level1-2">
-                        <div class = "folder-box">
+                        <div class = "folder-box" id = "folder-box-5">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <i class="fa-regular fa-folder fa-2x"></i>
@@ -99,7 +107,7 @@
                         </div>
                     </div>
                     <div class = "level2" id = "level2-2">
-                        <div class = "folder-box">
+                        <div class = "folder-box" id = "folder-box-6">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
@@ -108,7 +116,7 @@
                         </div>
                     </div>
                     <div class = "level3" id = "level3-2">
-                        <div class = "folder-box">
+                        <div class = "folder-box" id = "folder-box-7">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
@@ -134,19 +142,44 @@
                     <div class = "explanation-box">
                         <br>
                         <i class="fa-solid fa-circle-info"></i>
-                        <p> The BIDS structure consists of subject folders and a phenotype folder. <br><br>
-
-                            <b>Phenotype:</b> Group-level data files that are not specific to any particular neuroimaging modality, such as questionnaires or hormone level output. A single phenotype data file typically contains information about all participants’ performance or characteristics related to a specific task within the study. <br>
-                            <ul>- beh (group-level behavioral data from tasks)</ul>
-                            <ul>- quest (questionnaire data)</ul>
-                            <ul>- biosample (data from biosamples, e.g., hormone level output)</ul>
-                            <b>Subject folders:</b> Data files that are specific to a particular (neuro)imaging/recording modality. BIDS includes the following modalities:
-                            <ul>- func (task-based and resting-state functional MRI)</ul>
-                            <ul>- fmap (field inhomogeneity mapping data such as field maps)</ul>
-                            <ul>- anat (structural imaging such as T1, T2, PD, etc.)</ul>
-                            <ul>- eeg (electroencephalography)</ul>
-                            <ul>- beh (individual task data related to non-neuro recording files, such as ECG, skin conductance, dynamometer)</ul>
-                            </p>                            
+                        <p> The BIDS structure consists of a phenotype folder, subject folders, and a derivative folder. <br><br>
+                            <details>
+                                <summary><b>Phenotype folder</b></summary>
+                                <div class ="explanation-sub" id = "explanation-pheno">
+                                    <div>
+                                        Group-level data files that are not specific to any particular neuroimaging modality, such as questionnaires or hormone level output. A single phenotype data file typically contains group-level data, with one row per participant, meaning all participants are included in a single file. <br>
+                                        <ul>
+                                            <li><b>quest</b> – Questionnaire data</li>
+                                            <li><b>beh</b> – Behavioral task data aggregated at participant level (e.g., task scores from Qualtrics)</li>
+                                            <li><b>biosample</b> – Biosample data (e.g., hormone levels)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary><b>Subject folders</b></summary>
+                                <div class ="explanation-sub" id = "explanation-subj">
+                                    Each subject folder contains data specific to that participant's recording sessions, organized by modality:
+                                        <ul>
+                                            <li><b>anat</b>– Structural MRI data (e.g., T1w, T2w)</li>
+                                            <li><b>func</b>– Task-based and resting-state fMRI data, including concurrent physiological recordings acquired during the fMRI scan (e.g., heart rate, respiration recorded simultaneously with the MRI).</li>
+                                            <li><b>eeg </b>– Task-based and resting-state EEG data, including concurrent physiological recordings acquired during EEG.</li>
+                                            <li><b>beh</b> –  Individual task data and physiological recordings acquired independently of any neuroimaging or other modality recordings (e.g., ECG or skin conductance recorded outside the scanner, or trial-level behavioral data from computer tasks). </li>
+                                        </ul>
+                                </div>
+                            </details>
+                            <details>
+                                <summary><b>Derivatives folder</b></summary>
+                                <div class ="explanation-sub" id = "explanation-der">
+                                    Contains processed or derived data based on the curated contents of the subject folders and the phenotype folder.
+                                    <ul>
+                                        <li>Processed and preprocessed neuroimaging data (excluding initial anonymization steps such as defacing)</li>
+                                        <li>Aggregated individual behavioral data, such as combined files from sub-*/beh/</li>
+                                        <li>Derived group-level measures, such as computed sum scores from questionnaires</li>
+                                    </ul>
+                                </div>
+                            </details> 
+                        </p>                            
                     </div>
                 </div>
             </div>
@@ -225,7 +258,7 @@
                         <br>
                         <i class="fa-solid fa-circle-info"></i>
                         <p>This is what the 'first-level' of a data structure could look like. A phenotype folder and individual subject folders. Additionally, there is room for files with participant information. <br><br>
-                            Generally speaking, information about participants themselves (demographics) is placed in the demographics file, whereas information about participation (e.g., dates of sessions, sessions completed, etc.) is placed in a participation file. <br><br> Additionally, there is room for a derivatives folder, in which outputs from processing pipelines can be saved.</p>
+                            Generally speaking, information about participants themselves (demographics) is placed in the demographics file, whereas information about participation (e.g., dates of sessions, sessions completed, etc.) is placed in a participation file. <br><br> Additionally, there is room for a derivatives folder.</p>
                     </div> 
                 </div>    
             </div>
@@ -314,7 +347,7 @@
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <i class="fa-regular fa-folder fa-2x"></i>
-                            <p class = "folder">phenotype</p>
+                            <p class = "folder">derivatives</p>
                         </div>
                     </div>
                     <div class = "level2" id = "level2-1">
@@ -323,7 +356,7 @@
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
                             <i class="fa-regular fa-folder fa-2x"></i>
-                            <p class = "folder">ses-01</p>
+                            <p class = "folder">phenotype</p>
                         </div>
                     </div>
                     <div class = "level3" id = "level3-1">
@@ -332,22 +365,31 @@
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
                             <i class="fa-regular fa-folder fa-2x"></i>
-                            <p class = "folder">beh</p>
+                            <p class = "folder">ses-01</p>
                         </div>
                     </div>
                     <div class = "level4" id = "level4-1">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">beh</p>
+                        </div>
+                    </div>
+                    <div class = "level5" id = "level5-1">
                         <div class = "file-box" id = "file-box-1">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
                             <p class = file-icon  id = "file1"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file">gutseur_ses-01_task-behsddt.tsv</p>
+                            <p class = "file">gutseur_ses-01_task-sddt_desc-aggregated_events.tsv</p>
                         </div>
                         <div class = "file-box" id = "file-box-2">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = file-icon id = "file2"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >gutseur_ses-01_task-behsddt.json</p>
+                            <p class = "file" >gutseur_ses-01_task-sddt_desc-aggregated_events.json</p>
                         </div>
                     </div>
                     <div class = "level1" id = "level1-2">
@@ -395,46 +437,45 @@
                             <br>
                             
                             <p class = file-icon id = "file5"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-fmrisddt_run-01_bold.json</p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-sddt_run-01_bold.json</p>
                         </div>
                         <div class = "file-box" id = "file-box-6">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = file-icon id = "file6"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-fmrisddt_run-01_bold.nii.gz   </p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-sddt_run-01_bold.nii.gz   </p>
                         </div>
                         <div class = "file-box" id = "file-box-7">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             
                             <p class = file-icon id = "file7"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-fmrisddt_run-01_events.tsv</p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-sddt_run-01_events.tsv</p>
                         </div>
                         <div class = "file-box" id = "file-box-8">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = file-icon id = "file8"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-fmrisddt_run-02_bold.json</p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-sddt_recording-ecg_physio.tsv.gz</p>
                         </div>
                         <div class = "file-box" id = "file-box-9">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             
                             <p class = file-icon id = "file9"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-fmrisddt_run-02_bold.nii.gz</p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-sddt_recording-ecg_physio.json</p>
                         </div>
                         <div class = "file-box" id = "file-box-10">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = file-icon id = "file10"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-fmrisddt_run-02_events.tsv   </p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-sddt_recording-respiro_physio.tsv.gz</p>
                         </div>
                     </div>
                     <div class = "explanation-box">
                         <br>
                         <i class="fa-solid fa-circle-info"></i>
-                        <p>In (f)MRI, we have an 'fmri' and 'beh' prefix for the short name of a certain task conducted during fMRI.<br><br> For example, for the task SSDT, we have a behsddt short name that represents group-level data (in the phenotype folder). This file contains data from all individual event files containing responses/scores from participants during the specific SDDT task.
-                             <br><br> The fmrisddt data is stored per individual in the 'func' folder. This allows researchers to conduct both individual fMRI analyses and group-level behavioral analyses.</p>
+                        <p>In the 'func' folder - nested within the subject folder -  you can find subject-level task-based and resting-state fMRI data, including concurrent physiological recordings acquired during the fMRI session (e.g., heart rate, respiration recorded simultaneously with MRI). <br><br> Additionally, combined (aggregrated) and processed events files can be placed in the derivatives folder. See the 'derivatives' tab for more information about fmri preprocessing derivatives.</p>
                     </div>
                 </div>
             </div>
@@ -449,7 +490,7 @@
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <i class="fa-regular fa-folder fa-2x"></i>
-                            <p class = "folder">phenotype</p>
+                            <p class = "folder">derivatives</p>
                         </div>
                     </div>
                     <div class = "level2" id = "level2-1">
@@ -458,7 +499,7 @@
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
                             <i class="fa-regular fa-folder fa-2x"></i>
-                            <p class = "folder">ses-01</p>
+                            <p class = "folder">phenotype</p>
                         </div>
                     </div>
                     <div class = "level3" id = "level3-1">
@@ -467,22 +508,31 @@
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
                             <i class="fa-regular fa-folder fa-2x"></i>
-                            <p class = "folder">beh</p>
+                            <p class = "folder">ses-01</p>
                         </div>
                     </div>
                     <div class = "level4" id = "level4-1">
+                        <div class = "folder-box">
+                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
+                            <br>
+                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
+                            <i class="fa-regular fa-folder fa-2x"></i>
+                            <p class = "folder">beh</p>
+                        </div>
+                    </div>
+                    <div class = "level5" id = "level5-1">
                         <div class = "file-box" id = "file-box-1">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
                             <p class = file-icon  id = "file1"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file">gutseur_ses-01_task-behgonogo.tsv</p>
+                            <p class = "file">gutseur_ses-01_task-gonogo_desc-aggregated_events.tsv</p>
                         </div>
                         <div class = "file-box" id = "file-box-2">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = file-icon id = "file2"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >gutseur_ses-01_task-behgonogo.json</p>
+                            <p class = "file" >gutseur_ses-01_task-gonogo_desc-aggregated_events.json</p>
                         </div>
                     </div>
                     <div class = "level1" id = "level1-2">
@@ -517,32 +567,32 @@
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
                             <p class = file-icon id = "file3"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-eeggonogo_channels.tsv</p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-gonogo_channels.tsv</p>
                         </div>
                         <div class = "file-box" id = "file-box-4">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = file-icon id = "file4"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-eeggonogo_events.tsv</p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-gonogo_events.tsv</p>
                         </div>
                         <div class = "file-box" id = "file-box-5">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             
                             <p class = file-icon id = "file5"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-eeggonogo_eeg.edf</p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-gonogo_eeg.edf</p>
                         </div>
                         <div class = "file-box" id = "file-box-6">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = file-icon id = "file6"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-eeggonogo_eeg.json</p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-gonogo_eeg.json</p>
                         </div>
                     </div>
                     <div class = "explanation-box">
                         <br>
                         <i class="fa-solid fa-circle-info"></i>
-                        <p>In EEG, we have an 'eeg' and 'beh' prefix for the short name of a certain task conducted during EEG.<br><br> For example, for the task Go No Go, we have a behgonogo short name that represents group-level data (in the phenotype folder). This file contains data from all individual event files containing responses/scores from participants during the specific Go No Go task. <br><br> The eeggonogo data is stored per individual in the 'eeg' folder. This allows researchers to conduct both individual EEG analyses and group-level behavioral analyses.</p>
+                        <p>In the 'eeg' folder - nested within the subject folder -  you can find subject-level task-based and resting-state EEG data. <br><br> Additionally, combined (aggregrated) and processed events files can be placed in the derivatives folder. See the 'derivatives' tab for more information about preprocessing derivatives.</p>
                     </div>
                 </div>
                 
@@ -585,13 +635,13 @@
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
                             <p class = file-icon  id = "file1"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file">gutseur_ses-01_task-behsocialeffort.tsv</p>
+                            <p class = "file">gutseur_ses-01_task-raven.tsv</p>
                         </div>
                         <div class = "file-box" id = "file-box-2">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = file-icon id = "file2"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >gutseur_ses-01_task-behsocialeffort.json</p>
+                            <p class = "file" >gutseur_ses-01_task-raven.json</p>
                         </div>
                     </div>
                     <div class = "level1" id = "level1-2">
@@ -626,45 +676,32 @@
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
                             <p class = file-icon id = "file3"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-dynosocialeffort_events.tsv</p>
-                        </div>
-                        <div class = "file-box" id = "file-box-4">
-                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
-                            <br>
-                            <p class = file-icon id = "file4"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-dynosocialeffort_physio.acq</p>
-                        </div>
-                        <div class = "file-box" id = "file-box-5">
-                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
-                            <br>
-                            
-                            <p class = file-icon id = "file5"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-dynosocialeffort_markers.tsv</p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-socialeffort_beh.tsv</p>
                         </div>
                         <div class = "file-box" id = "file-box-6">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = file-icon id = "file6"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-dynosocialeffort_events.json</p>
-                        </div>
-                        <div class = "file-box" id = "file-box-7">
-                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
-                            <br>
-                            
-                            <p class = file-icon id = "file7"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >  sub-gutseur0001_ses-01_task-dynosocialeffort_markers.json</p>
-                        </div>
-                        <div class = "file-box" id = "file-box-8">
-                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
-                            <br>
-                            <p class = file-icon id = "file8"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-dynosocialeffort_physio.json</p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-socialeffort_beh.json</p>
                         </div>
                     </div>
                     <div class = "explanation-box">
                         <br>
                         <i class="fa-solid fa-circle-info"></i>
-                        <p>We treat non-neuro recordings (ECG, EDA, Dynamometer) in a similar manner as neuro-recordings, as there is something (strength, heart rate, skin conductance) being measured while performing a task. For (f)MRI data, we have fmrisddt and behsddt. For the dynamometer data, we do the same:<br><br>For example, for the task with the short name 'prosocial-effort': <br><br>dynosocialeffort and behsocialeffort, where dynosocialeffort is in a subject folder with events, markers, and logs. The strength acquisition file (with _physio here) is then the main file (like a nii.gz file in fMRI). <br><br> Instead of the 'func' or 'eeg' folder, the data is stored in the 'beh' folder as this is the location for data from experiments performed with no neural recordings, according to BIDS.</p>
+                        <p>The location of behavioral data depends on how and when the data was collected:
+
+                        <ul>
+                          <li><strong>Group-level behavioral data</strong>, such as tasks administered through Qualtrics (e.g., the Raven task), are typically exported as a single file containing all participants. These should be placed in the <code>phenotype/beh/</code> folder.</li>
+                            <br>
+                          <li><strong>Individual-level behavioral data</strong>, such as those generated by E-Prime or other computer tasks producing trial-by-trial outputs per participant, should be placed in each participant’s <code>beh/</code> folder within the subject directories.</li>
+                            <br>
+                          <li>If a behavioral task was performed <strong>during neuroimaging or EEG acquisition</strong>, the associated data should be stored in events files in the corresponding <code>func/</code> or <code>eeg/</code> folders, not in <code>beh/</code>.</li>
+                            <br>
+                          <li>The <code>beh/</code> folder is reserved for behavioral or physiological tasks that were conducted <strong>independently of any concurrent neuro-recordings</strong>.</li>
+                            <br>
+                          <li>
+                            Additionally, combined (aggregrated) and processed _beh files can be placed in the derivatives folder. See the 'derivatives' tab for more information about preprocessing derivatives.
+                        </li></ul></p>
                     </div>
                 </div>
             </div>
@@ -679,7 +716,7 @@
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <i class="fa-regular fa-folder fa-2x"></i>
-                            <p class = "folder">phenotype</p>
+                            <p class = "folder">sub-gutseur0001</p>
                         </div>
                     </div>
                     <div class = "level2" id = "level2-1">
@@ -705,31 +742,21 @@
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
-                            <p class = file-icon  id = "file1"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file">gutseur_ses-01_task-behself.tsv</p>
+                            <p class = file-icon id = "file1"><i class="fa-regular fa-file fa-xl"></i></p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-self_recording-ecg_channels.tsv</p>
                         </div>
                         <div class = "file-box" id = "file-box-2">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = file-icon id = "file2"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >gutseur_ses-01_task-behself.json</p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-self_recording-ecg_ecg.set</p>
                         </div>
-                    </div>
-                    <div class = "level1" id = "level1-2">
-                        <div class = "folder-box">
+                        <div class = "file-box" id = "file-box-3">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
-                            <i class="fa-regular fa-folder fa-2x"></i>
-                            <p class = "folder">sub-gutseur0001</p>
-                        </div>
-                    </div>
-                    <div class = "level2" id = "level2-2">
-                        <div class = "folder-box">
-                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
-                            <br>
-                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
-                            <i class="fa-regular fa-folder fa-2x"></i>
-                            <p class = "folder">ses-01</p>
+                            
+                            <p class = file-icon id = "file3"><i class="fa-regular fa-file fa-xl"></i></p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-self_recording-ecg_ecg.json</p>
                         </div>
                     </div>
                     <div class = "level3" id = "level3-2">
@@ -738,48 +765,37 @@
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
                             <i class="fa-regular fa-folder fa-2x"></i>
-                            <p class = "folder">beh</p>
+                            <p class = "folder">func</p>
                         </div>
                     </div>
                     <div class = "level4" id = "level4-2">
-                        <div class = "file-box" id = "file-box-3">
+                        <div class = "file-box" id = "file-box-8">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
-                            <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
-                            <p class = file-icon id = "file3"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-ecgself_channels.tsv</p>
+                            <p class = file-icon id = "file8"><i class="fa-regular fa-file fa-xl"></i></p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-sddt_recording-ecg_physio.tsv.gz</p>
                         </div>
-                        <div class = "file-box" id = "file-box-4">
-                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
-                            <br>
-                            <p class = file-icon id = "file4"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-ecgself_ecg.set</p>
-                        </div>
-                        <div class = "file-box" id = "file-box-5">
+                        <div class = "file-box" id = "file-box-9">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             
-                            <p class = file-icon id = "file5"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-ecgself_ecg.json</p>
+                            <p class = file-icon id = "file9"><i class="fa-regular fa-file fa-xl"></i></p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-sddt_recording-ecg_physio.json</p>
                         </div>
-                        <div class = "file-box" id = "file-box-6">
+                        <div class = "file-box" id = "file-box-10">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
-                            <p class = file-icon id = "file6"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-ecgself_events.tsv</p>
-                        </div>
-                        <div class = "file-box" id = "file-box-7">
-                            <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
-                            <br>
-                            
-                            <p class = file-icon id = "file7"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >sub-gutseur0001_ses-01_task-ecgself_events.json</p>
+                            <p class = file-icon id = "file10"><i class="fa-regular fa-file fa-xl"></i></p>
+                            <p class = "file" >sub-gutseur0001_ses-01_task-sddt_recording-respiro_physio.tsv.gz</p>
                         </div>
                     </div>
                     <div class = "explanation-box">
                         <br>
                         <i class="fa-solid fa-circle-info"></i>
-                        <p>For ECG data, the same holds as for Dynamometer data. For example, if you measure heart rate while participants perform a task with the short name 'self,' there will be behself files in the phenotype folder, and there will be ecgself files in the individual beh folder.<br><br></p>
+                        <p>The location of ECG - but also Respirometer and Skin conductance - data depends on the concurrent task that was measured. 
+                            <br><br>
+                            For example, ECG data collected during an fMRI task will be placed in the 'func' folder, whereas ECG data collected during a computer task will be placed in the individual 'beh' folder.
+                            </p>
                     </div>
                 </div>
             </div>
@@ -914,7 +930,7 @@
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
                             <i class="fa-regular fa-folder fa-2x"></i>
-                            <p class = "folder">neurobio</p>
+                            <p class = "folder">beh</p>
                         </div>
                     </div>
                     <div class = "level5" id = "level5-1">
@@ -923,13 +939,13 @@
                             <br>
                             <p class = "arrow"><i class="fa-solid fa-arrow-turn-up fa-rotate-90 fa-1x"></i></p>
                             <p class = file-icon  id = "file1"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file">gutseur_ses-01_task-smri_desc-freesurfer-corticalvol.tsv</p>
+                            <p class = "file">gutseur_ses-01_task-socialeffort_desc-aggregated_beh.tsv</p>
                         </div>
                         <div class = "file-box" id = "file-box-2">
                             <p class = "square-icon"><i class="fa-regular fa-square"></i></p>
                             <br>
                             <p class = file-icon id = "file2"><i class="fa-regular fa-file fa-xl"></i></p>
-                            <p class = "file" >gutseur_ses-01_task-smri_desc-freesurfer-corticalthickness.tsv</p>
+                            <p class = "file" >gutseur_ses-01_task-sddt_desc-aggregated_events.tsv</p>
                         </div>
                     </div>
                     <div class = "level2" id = "level2-2">
@@ -1044,7 +1060,18 @@
                     <div class = "explanation-box">
                         <br>
                         <i class="fa-solid fa-circle-info"></i>
-                        <p>In the derivative folder, there is place for files that are the result of data going through some sort of processing pipeline. The derivative folder contains: <br><Br> <b>1. Pipeline folders </b><br> <b>2. A phenotype folder</b> <br><br>For example, calculated total/subscale scores of a questionnaire or freesurfer output or neurobiological group-level files manually created from freesurfer output can be placed in the derivative phenotype folder.  <br><br>You can also opt to place the latter in a <b>'group'</b> folder within the pipeline folder, so that all pipeline data output stays together. <br><br> <b>"Desc"</b>stands for <b>description</b> and describes what kind of data is derived from the primary file. In this case, it describes what kind of data was derived from the smri data (through freesurfer) and the questionnaire iri. <b>Note that information about the original file should be placed in the accompanying json file.</b><br><br> <b>Make sure task information is included in the derivative data structure.</b> Preferably in the file name: <br><br> 'sub-gutseur0001_ses-01_<b>task-fmrisddt</b>_desc-brain_mask.nii.gz'.<br> <br> In case, that is not possible, it should be in the pipeline name:<br> 'fmriprep_<b>task-fmrisddt</b>''  </p>
+                        <p>The <code>derivatives</code> folder is used to store files that result from data processed through a specific pipeline. It typically contains: <br><br> <b>1. Pipeline-specific folders</b><br> <b>2. A phenotype folder</b> <br><br> Examples of files to include in the <code>phenotype</code> folder are: 
+                        <ul>
+                            <li> Computed total or subscale scores from questionnaires or behavioral tasks</li>
+                            <li> Aggregated behavioral data <br>
+                                - use <code>_beh</code> for data that’s not time-locked to the imaging data 
+                                <br>
+                                - use <code>_event</code> for time-locked events during an fMRI or EEG task.</li>
+                            <li> Manually created group-level neurobiological files derived from Freesurfer output.</li>
+                        </ul>
+                        <br>
+                        Alternatively, these neurobiological group-level files can be placed in a <b><code>group</code></b> subfolder within the appropriate pipeline folder, keeping all related pipeline output together. <br><br> The <b><code>desc</code></b> field stands for <b>description</b> and should indicate what kind of data was derived from the original input. For example, it may describe data derived from sMRI via Freesurfer, or from a specific questionnaire like the IRI. <b>Details about the original file should always be included in the accompanying JSON sidecar.</b> <br><br> <b>Ensure that task information is included in the derivative file structure.</b> Ideally, this should be embedded in the file name, for example: <br><br> <code>sub-gutseur0001_ses-01_<b>task-sddt</b>_desc-brain_mask.nii.gz</code> <br><br> If including task information in the filename isn’t possible, it must be reflected in the pipeline name, such as: <br><br> <code>fmriprep_<b>task-sddt</b></code> 
+                        </p>
                     </div>
                 </div>   
             </div>      
